@@ -1,1 +1,1 @@
-web: gunicorn pet_pals.app:app
+web: gunicorn hiv_prep.app:app
