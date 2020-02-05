@@ -1,5 +1,6 @@
 from sqlalchemy import func
 import pandas as pd
+import os
 
 # SQL Alchemy
 from sqlalchemy import create_engine
@@ -15,7 +16,13 @@ from flask import (
 
 app = Flask(__name__)
 
-engine = create_engine("")
+username = os.environ.get('remote_gwsis_dbuser')
+password = os.environ.get('remote_gwsis_dbpwd')
+port = os.environ.get('remote_db_port')
+endpoint = os.environ.get('remote_db_endpoint')
+db = os.environ.get('remote_gwsis_dbname')
+
+engine = create_engine(f"mysql://{username}:{password}@{endpoint}:{port}/{db}")
 
 conn = engine.connect()
 
