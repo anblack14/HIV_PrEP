@@ -69,16 +69,11 @@
       <div class="col-md-12">
     <!-- USA choropleth map -->
     <h2 class="row" id="statesHIV">HIV CHOROPLETH</h2>
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  </head>
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-4" id="choromapSelector1">
         <div align="center" class="form-group">
-          <ul class="list-group" id="filters">
+          <!-- <ul class="list-group" id="filters">
             <li class="filter list-group-item">
               <label>DropDown</label><br>
               <select id="year_group" onchange="rebuildMap()">
@@ -87,7 +82,7 @@
                 <option value="Difference"></option>
               </select>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <div class="col-md-1"></div>
@@ -130,9 +125,13 @@
     <div class="row whitespace">
       <div class="col-md-1"></div>
       <div class="col-md-10">
-        <h2>SCATTER PLOT </h2>
+        <h2>HIV CASE RATE VS INCOME SCATTER PLOT</h2>
 
-  <div id="scatter" class="js-plotly-plot"></div>
+          <div id="scatter2"></div>
+          <select id="selDataset">
+            <option value="dataset1">2008-2012 HIV Case Rate vs Average Annual Income</option>
+            <option value="dataset2">2013-2018 HIV Case Rate vs Average Annual Income</option>
+          </select>
 
         <p><SOURCE:media>SOURCE: NEW SOURCE</SOURCE:media>
       </p>
@@ -140,13 +139,28 @@
       <div class="col-md-1"></div>
     </div>
   </section>
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h3>HIV CASE RATE VS UNEMPLOYMENT SCATTER PLOT</h3>
+  
+          <div id="scatter3"></div>
+          <select id="selDataset2">
+            <option value="dataset21">2008-2012 HIV Case Rate vs Unemployment Rate</option>
+            <option value="dataset22">2013-2018 HIV Case Rate vs Unemployment Rate</option>
+          </select>
+  
+          <p><SOURCE:media>SOURCE: https://www.cdc.gov/GIS/</SOURCE:media> </p> 
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </section>
       </div>
     </div>
   </div>
 
-  
-
-    
   <div class="footer">Project Number 2 Brought to you by Team HIV PrEP in the 2020 GW Analytics & Visualization Bootcamp.  Team members include Alex Black, Brett Schneider, Johar Najmi, Manuel Jean, and Michelle Salter</div>
   <!-- libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -161,9 +175,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.1/bootstrap-slider.js"></script>
   <script src="{{ url_for('static', filename='js/config.js') }}"></script>
   <script src="{{ url_for('static', filename='js/choropleth.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/scatters.js') }}"></script>
   <script src="{{ url_for('static', filename='js/choro.js') }}"></script>
-
+  <script src="{{ url_for('static', filename='js/scatter_income2.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/scatter_unemploy2.js') }}"></script>
 
 
  
