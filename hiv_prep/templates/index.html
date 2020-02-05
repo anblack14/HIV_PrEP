@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HIV PrEP</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+  <!-- stylin' -->
+  <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+  <link rel="stylesheet" type="text/javascript" href="../static/js/LineGraph_USHIV.js">
+  <link rel="stylesheet" type="text/javascript" href="../static/images/prepbackground4.jpg">
+  <!-- <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
+  <!-- favicon -->
+  <!-- sliders -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.1/css/bootstrap-slider.css">
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav id="navbar">
+    <div class="navbar-header">
+      <a class="navbar-brand team-name" href="" style="padding-left:25px">HIV PrEP</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" target="#" href="https://github.com/BenBBicklebaum/Project2"><img src="../static/images/GitHub-Mark-32px.png"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+        <div class="hero text-center">
+          <h1>HIV PrEP</h1>
+  </div>
+
+  <!-- Navigation -->
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 style="color:whitesmoke" class="section-heading text-uppercase">WHAT IS HIV PrEP?</h2>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/TR8-3uAuZGo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3 class="section-subheading text-muted">Protect yourself, learn about PrEP (Pre-Exposure Prophylaxis), how it works, how to get it, and if it's the right choice for you?!</h3>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-6">
+          <a href="https://www.truvada.com/what-is-truvada/understanding-truvada"><img src="../static/images/prep_truvada_image.jpeg" width=180px alt="Truvada Drug Icon" class="img-fluid"></a>
+          <h4 class="service-heading">Truvada</h4>
+          <p class="text-muted">TRUVADA for PrEP® (pre-exposure prophylaxis) is a prescription medicine that can help reduce the risk of getting HIV-1 through sex, when taken every day and used together with safer sex practices.
+            TRUVADA for PrEP is only for people who are at risk of getting HIV-1 and weigh at least 77 pounds.
+            You must be HIV-negative before you start taking TRUVADA for PrEP.  TRUVADA for PrEP does not prevent other sexually transmitted infections (STIs) or pregnancy.</p>
+        </div>
+        <div class="col-md-6">
+          <a href="https://www.descovy.com/prep?utm_medium=cpc&utm_campaign=71700000061640858&utm_content=Truvada_KW&utm_term=truvada&utm_source=google&gclid=CjwKCAiAyeTxBRBvEiwAuM8dnccIJXw59Sy6t8W_0JuqERNF36z57OoHVrG3weup2sicHiClyUL-2hoCk-sQAvD_BwE&gclsrc=aw.ds"><img src="../static/images/prep_descovy_image.jpeg" width=180px alt="Descovy Drug Icon" class="img-fluid"></a>
+          <h4 class="service-heading">Descovy</h4>
+          <p class="text-muted">DESCOVY for HIV-1 pre-exposure prophylaxis (PrEP) is indicated in at-risk adults and adolescents to reduce the risk of sexually acquired HIV-1 infection, excluding individuals at risk from receptive vaginal sex. HIV-1–negative status must be confirmed immediately prior to initiation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row whitespace">
+
+      <div class="col-md-12">
+    <!-- USA choropleth map -->
+    <h2 class="row" id="statesHIV">HIV CHOROPLETH</h2>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  </head>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-4" id="choromapSelector1">
+        <div align="center" class="form-group">
+          <ul class="list-group" id="filters">
+            <li class="filter list-group-item">
+              <label>DropDown</label><br>
+              <select id="year_group" onchange="rebuildMap()">
+                <option value="Rate of New Cases Before PrEP" selected></option>
+                <option value="Rate of New Cases After PrEP"></option>
+                <option value="Difference"></option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+        </div>  
+      </div> 
+      </div>
+    </div>
+    <div class="row whitespace">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div id="choromap" style="height: 650px;" ></div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+
+     
+  <!-- Scatter Plot and Line Graph -->
+  <section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h3>LINE GRAPH</h3>
+        <html lang="en">
+
+    <script src="../static/js/plotly-latest.min.js"></script>
+
+    <div id="plot"></div>
+    <script src="../static/js/LineGraph_USHIV.js"></script>
+
+        <p><SOURCE:media>SOURCE: https://www.cdc.gov/GIS/</SOURCE:media>
+      </p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </section>
+  <section id="servicesalt">
+    <!-- scatter plots -->
+    <div class="row whitespace">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h2>SCATTER PLOT </h2>
+
+  <div id="scatter" class="js-plotly-plot"></div>
+
+        <p><SOURCE:media>SOURCE: NEW SOURCE</SOURCE:media>
+      </p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </section>
+
+        <!-- <section class="bg-light" id="vari-data" style="padding: 20px">
+          <div class="container">
+            <div class="row whitespace">
+            <h2>Factors Affecting Use of PrEP</h2>
+            <div class="row" style="padding-top: 25px">
+              <div class="col-md-12">
+                <div id="scatter" class="js-plotly-plot">
+                  <div class="plot-container plotly">
+            
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="row whitespace">
+              <div class="col-md-12 text-left">
+                <p class="text-left">
+                  <a target="#_blank"> </a> 
+                  
+                
+                  
+                  <br><br>
+                  
+                </p>
+              </div> 
+            </div>
+          </div>
+        </section> -->
+      </div>
+    </div>
+  </div>
+
+  
+
+    
+  <div class="footer">Project Number 2 Brought to you by Team HIV PrEP in the 2020 GW Analytics & Visualization Bootcamp.  Team members include Alex Black, Brett Schneider, Johar Najmi, Manuel Jean, and Michelle Salter</div>
+  <!-- libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> <!-- chart.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+  <!-- main visualizations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.1/bootstrap-slider.js"></script>
+  <script src="../static/js/config.js"></script>
+  <script src="../static/js/choropleth.js"></script>
+  <script src="../static/js/scatters.js"></script>
+  <script src="../static/js/choro.js"></script>
+
+
+ 
+  <!-- fancy gauge CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js.map"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.1/raphael-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.1/raphael.js"></script>
+  
+</body>
+
+</html>

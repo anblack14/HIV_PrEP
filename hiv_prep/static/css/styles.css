@@ -14,35 +14,25 @@ font-family: 'Roboto Mono', monospace;
  Tag Data
  ====================================== */
  /* The styles for the parallax */
-.hero {
+ .hero {
     position: relative;
     height: 550px;
     padding: 20px;
     margin: 0;
     background: black;
-    background-image: url("prepbackground4.jpg");
+    background-image: url("../images/prepbackground4.jpg");
     background-attachment: fixed;
     background-position: bottom center;
     background-size: cover;
   }
   .hero h1 {
-    margin-top: 200px;
-    font-size: 0.1rem;
+    font-size: 180px;
+    margin-top: 100px;
+    font-weight: bold;
     animation: title 1.2s forwards linear;
+    color: rgb(235, 45, 31)
   }
-  .hero p {
-    font-size: 2rem;
-    opacity: 0;
-    animation: subtitle 1.2s forwards linear;
-    animation-delay: 1.2s;
-  }
-  
-  
-  
-  
-  
-  
- 
+
  body {
     height: 100%;
     padding: 0;
@@ -67,10 +57,10 @@ font-family: 'Roboto Mono', monospace;
  
  h3 {
      font-family: 'Roboto', sans-serif;
-     font-size: 20px;
+     font-size: 30px;
      text-align: center;
      color: rgb(34, 33, 33);
-     line-height: 1.75em;
+     
  }
  
  h4 {
@@ -164,7 +154,6 @@ font-family: 'Roboto Mono', monospace;
      font-family: 'Lato', sans-serif;
      font-size: 50px;
      color: whitesmoke;
-     background-image: url("../images/ryoji-iwata-697773-unsplash.jpg");
      background-size: cover;
      min-height: 350px;
      margin: 0px;
@@ -186,32 +175,9 @@ font-family: 'Roboto Mono', monospace;
      z-index: 2;
  }
  
- /* overlay an opaque dark color so the text will still show up */
- .hero {
-     font-family: 'Lato', sans-serif;
-     background-image: url("../images/markus-spiske-518966-unsplash.jpg");
-     background-size: cover;
-     min-height: 500px;
-     font-size: 50px;
-     color: whitesmoke;
-     margin: 0px;
-     position: relative;
- }
  
- .hero > .overlay {
-     position: absolute;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
-     background-color: rgba(8, 9, 58, 0.8);
-     z-index: 1;
- }
  
- .hero > .inner {
-     position: relative;
-     z-index: 2;
- }
+ 
  
  .h3-white {
      font-family: 'Roboto', sans-serif;
@@ -318,6 +284,8 @@ font-family: 'Roboto Mono', monospace;
      color: whitesmoke;
  }
  
+
+
  
  /* ======================================
   ID Data
@@ -540,7 +508,6 @@ font-family: 'Roboto Mono', monospace;
  width: 30px; /* Set a specific slider handle width */
  height: 30px; /* Slider handle height */
  /* border: 0; */
- background: url(../images/skull-and-crossbones.png);
  background-size: 30px;
  background-repeat: no-repeat;
  cursor: pointer; /* Cursor on hover */
@@ -550,7 +517,6 @@ font-family: 'Roboto Mono', monospace;
  width: 30px; /* slider handle width */
  height: 30px; /* Slider handle height */
  /* border: 0; */
- background: url(../images/skull-and-crossbones.png);
  background-size: 30px;
  background-repeat: no-repeat;
  cursor: pointer; /* Cursor on hover */
