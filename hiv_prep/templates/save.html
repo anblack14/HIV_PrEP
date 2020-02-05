@@ -10,10 +10,13 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
   <!-- stylin' -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-  <link rel="stylesheet" type="text/javascript" href="{{ url_for('static', filename='js/LineGraph_USHIV.js') }}">
-  <link rel="stylesheet" type="text/images" href="{{ url_for('static', filename='images/prepbackground4.jpg') }}">
+  <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+  <link rel="stylesheet" type="text/javascript" href="../static/js/LineGraph_USHIV.js">
+  <link rel="stylesheet" type="text/javascript" href="../static/images/prepbackground4.jpg">
+  <!-- <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
+  <!-- favicon -->
+  <!-- sliders -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.1/css/bootstrap-slider.css">
 </head>
 
@@ -26,7 +29,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">
-          <a class="nav-link" target="#" href="https://github.com/BenBBicklebaum/Project2"><img src="{{ url_for('static', filename='images/GitHub-Mark-32px.png') }}"></a>
+          <a class="nav-link" target="#" href="https://github.com/BenBBicklebaum/Project2"><img src="../static/images/GitHub-Mark-32px.png"></a>
         </li>
       </ul>
     </div>
@@ -48,14 +51,14 @@
       </div>
       <div class="row text-center">
         <div class="col-md-6">
-          <a href="https://www.truvada.com/what-is-truvada/understanding-truvada"><img src="{{ url_for('static', filename='images/prep_truvada_image.jpeg') }}" width=180px alt="Truvada Drug Icon" class="img-fluid"></a>
+          <a href="https://www.truvada.com/what-is-truvada/understanding-truvada"><img src="../static/images/prep_truvada_image.jpeg" width=180px alt="Truvada Drug Icon" class="img-fluid"></a>
           <h4 class="service-heading">Truvada</h4>
           <p class="text-muted">TRUVADA for PrEP® (pre-exposure prophylaxis) is a prescription medicine that can help reduce the risk of getting HIV-1 through sex, when taken every day and used together with safer sex practices.
             TRUVADA for PrEP is only for people who are at risk of getting HIV-1 and weigh at least 77 pounds.
             You must be HIV-negative before you start taking TRUVADA for PrEP.  TRUVADA for PrEP does not prevent other sexually transmitted infections (STIs) or pregnancy.</p>
         </div>
         <div class="col-md-6">
-          <a href="https://www.descovy.com/prep?utm_medium=cpc&utm_campaign=71700000061640858&utm_content=Truvada_KW&utm_term=truvada&utm_source=google&gclid=CjwKCAiAyeTxBRBvEiwAuM8dnccIJXw59Sy6t8W_0JuqERNF36z57OoHVrG3weup2sicHiClyUL-2hoCk-sQAvD_BwE&gclsrc=aw.ds"><img src="{{ url_for('static', filename='images/prep_descovy_image.jpeg') }}" width=180px alt="Descovy Drug Icon" class="img-fluid"></a>
+          <a href="https://www.descovy.com/prep?utm_medium=cpc&utm_campaign=71700000061640858&utm_content=Truvada_KW&utm_term=truvada&utm_source=google&gclid=CjwKCAiAyeTxBRBvEiwAuM8dnccIJXw59Sy6t8W_0JuqERNF36z57OoHVrG3weup2sicHiClyUL-2hoCk-sQAvD_BwE&gclsrc=aw.ds"><img src="../static/images/prep_descovy_image.jpeg" width=180px alt="Descovy Drug Icon" class="img-fluid"></a>
           <h4 class="service-heading">Descovy</h4>
           <p class="text-muted">DESCOVY for HIV-1 pre-exposure prophylaxis (PrEP) is indicated in at-risk adults and adolescents to reduce the risk of sexually acquired HIV-1 infection, excluding individuals at risk from receptive vaginal sex. HIV-1–negative status must be confirmed immediately prior to initiation.</p>
         </div>
@@ -114,10 +117,10 @@
         <h3>LINE GRAPH</h3>
         <html lang="en">
 
-    <script src="{{ url_for('static', filename='js/plotly-latest.min.js') }}"></script>
+    <script src="../static/js/plotly-latest.min.js"></script>
 
     <div id="plot"></div>
-    <script src="{{ url_for('static', filename='js/LineGraph_USHIV.js') }}"></script>
+    <script src="../static/js/LineGraph_USHIV.js"></script>
 
         <p><SOURCE:media>SOURCE: https://www.cdc.gov/GIS/</SOURCE:media>
       </p>
@@ -140,6 +143,34 @@
       <div class="col-md-1"></div>
     </div>
   </section>
+
+        <!-- <section class="bg-light" id="vari-data" style="padding: 20px">
+          <div class="container">
+            <div class="row whitespace">
+            <h2>Factors Affecting Use of PrEP</h2>
+            <div class="row" style="padding-top: 25px">
+              <div class="col-md-12">
+                <div id="scatter" class="js-plotly-plot">
+                  <div class="plot-container plotly">
+            
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="row whitespace">
+              <div class="col-md-12 text-left">
+                <p class="text-left">
+                  <a target="#_blank"> </a> 
+                  
+                
+                  
+                  <br><br>
+                  
+                </p>
+              </div> 
+            </div>
+          </div>
+        </section> -->
       </div>
     </div>
   </div>
@@ -159,10 +190,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.1/bootstrap-slider.js"></script>
-  <script src="{{ url_for('static', filename='js/config.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/choropleth.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/scatters.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/choro.js') }}"></script>
+  <script src="../static/js/config.js"></script>
+  <script src="../static/js/choropleth.js"></script>
+  <script src="../static/js/scatters.js"></script>
+  <script src="../static/js/choro.js"></script>
 
 
  
