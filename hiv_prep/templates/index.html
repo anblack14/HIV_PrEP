@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">
-          <a class="nav-link" target="#" href="https://github.com/BenBBicklebaum/Project2"><img src="{{ url_for('static', filename='images/GitHub-Mark-32px.png') }}"></a>
+          <a class="nav-link" target="#" href="https://github.com/anblack14/HIV_PrEP"><img src="{{ url_for('static', filename='images/GitHub-Mark-32px.png') }}"></a>
         </li>
       </ul>
     </div>
@@ -68,23 +68,28 @@
 
       <div class="col-md-12">
     <!-- USA choropleth map -->
-    <h2 class="row" id="statesHIV">HIV CHOROPLETH</h2>
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-4" id="choromapSelector1">
+    <h2 class="row whitespace" id="statesHIV">Rate of New HIV Cases</h2>
+    <div class="row whitespace" style="padding-bottom: 0px">
+      <div class="col-md-4" id="choromapSelector">
+     
+        </div>
         <div align="center" class="form-group">
-          <!-- <ul class="list-group" id="filters">
+          <ul class="list-group" id="filters">
             <li class="filter list-group-item">
-              <label>DropDown</label><br>
-              <select id="year_group" onchange="rebuildMap()">
-                <option value="Rate of New Cases Before PrEP" selected></option>
-                <option value="Rate of New Cases After PrEP"></option>
+              
+                            
+              <label>Compare before PrEP and after PrEP/</label><br>
+              
+              
+              
+              <select id="dropdown">
+                <option value="Before PrEP" selected>Rate of New Cases Before PrEP</option>
+                <option value="After PrEP">Rate of New Cases After PrEP</option>
                 <option value="Difference"></option>
               </select>
             </li>
-          </ul> -->
-        </div>
-      </div>
+          </ul>
+        </div> 
       <div class="col-md-1"></div>
         </div>  
       </div> 

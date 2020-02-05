@@ -94,7 +94,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 
 // Load in geojson data
-var geoData = "new_HIV_case_rate.geo.json";
+var geoData = "new_HIV_case_rate_geo.json";
 console.log(geoData);
 
 var geojson;
