@@ -15,7 +15,7 @@ from flask import (
 
 app = Flask(__name__)
 
-engine = create_engine("mysql://admin:gwurox2020@databootcamp14.cdyglxvc7ejv.us-east-2.rds.amazonaws.com:3309/gwsis")
+engine = create_engine("")
 
 conn = engine.connect()
 
