@@ -21,11 +21,11 @@ function init() {
     var layout = {
       title:'2008-2012 HIV Case Rate vs. Unemployment Rate',
       xaxis: {
-        // range: [30000, 90000],
+        range: [0, 12],
         title: "Unemployment Rate"
         },
       yaxis: {
-        // range: [0, 135],
+        range: [0, 135],
         title: "HIV Case Rate"
       }
     };
