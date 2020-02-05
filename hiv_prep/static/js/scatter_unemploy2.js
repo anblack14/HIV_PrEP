@@ -77,6 +77,21 @@ function updatePlotly() {
       Plotly.restyle("scatter3", "y", [y]);
       Plotly.relayout("scatter3", update);
     });
+    // if (dataset === 'dataset23') {
+    //   var un = "/unemployment";
+    //   d3.json(un).then(function(data) {
+    //     console.log(data);
+    
+    //     var x = data.map(d=>d['Unemployment_rate_variance']);
+    //     var y = data.map(d=>d['']);
+    //     var update = {
+    //       title: '2013-2018 vs 2008-2012 Unemployment Rate Variance'
+    //     };
+        
+    //     Plotly.restyle("scatter3", "x", [x]);
+    //     Plotly.restyle("scatter3", "y", [y]);
+    //     Plotly.relayout("scatter3", update);
+    //   });
   }  
 
 

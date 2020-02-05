@@ -98,8 +98,7 @@ var geoData = "new_HIV_case_rate.geo.json";
 console.log(geoData);
 
 var geojson;
-
-
+var geojson1;
 
 
 //Define Before Choropleth
@@ -111,7 +110,7 @@ d3.json(geoData).then(function(data) {
   geojson = L.choropleth(data, {
 
     // Define what  property in the features to use
-    valueProperty: "2008-2012",
+    valueProperty: "Before Prep",
 
     // Set color scale
     scale: ["65FFF6","#1B283A"],
@@ -131,7 +130,7 @@ d3.json(geoData).then(function(data) {
     // Binding a pop-up to each layer
     onEachFeature: function(feature, layer) {
       layer.bindPopup(feature.properties["State Name"] + "<br>" +
-        + feature.properties["2008-2012"]);
+        + feature.properties["Before Prep"]);
     }
 
   }).addTo(myMap);
@@ -147,7 +146,7 @@ d3.json(geoData).then(function(data) {
     // Add legend info, min & max
     var legendInfo = "<h4>Rate of Cases per 100,000 population</h4>" +
       "<div class=\"labels\">" +
-        "<div class=\"min\">" + limits[0] + "</div>" + "<div class=\"max\">" + limits[limits.length - 1] +"</div>" + "</div>";
+        "<div class=\"min\">" + parseInt(limits[0]) + "</div>" + "<div class=\"max\">" + parseInt(limits[limits.length - 1]) +"</div>" + "</div>";
       "</div>";
 
     div.innerHTML = legendInfo;
@@ -170,7 +169,7 @@ d3.json(geoData).then(function(data) {
 
 //Define building the Choropleths
 function updateChoro() {
-  geojson.removeLayer();
+  // geojson.refresh();
 // Grab data with d3
 d3.json(geoData).then(function(data) {
   console.log(data);
@@ -179,7 +178,7 @@ d3.json(geoData).then(function(data) {
   geojson = L.choropleth(data, {
 
     // Define what  property in the features to use
-    valueProperty: time,
+    valueProperty: "After Prep",
 
     // Set color scale
     scale: ["65FFF6","#1B283A"],
@@ -199,7 +198,7 @@ d3.json(geoData).then(function(data) {
     // Binding a pop-up to each layer
     onEachFeature: function(feature, layer) {
       layer.bindPopup(feature.properties["State Name"] + "<br>" +
-        + feature.properties[time]);
+        + feature.properties["After Prep"]);
       // layer.on("mouseover", )
     }
 
@@ -216,7 +215,7 @@ d3.json(geoData).then(function(data) {
     // Add legend info, min & max
     var legendInfo = "<h4>Rate of Cases per 100,000 population</h4>" +
       "<div class=\"labels\">" +
-        "<div class=\"min\">" + limits[0] + "</div>" + "<div class=\"max\">" + limits[limits.length - 1] +"</div>" + "</div>";
+        "<div class=\"min\">" + parseInt(limits[0]) + "</div>" + "<div class=\"max\">" + parseInt(limits[limits.length - 1]) +"</div>" + "</div>";
       "</div>";
 
     div.innerHTML = legendInfo;
@@ -245,22 +244,19 @@ d3.json(geoData).then(function(data) {
 
 
 //Selecting the dropdown 'value' choosen (document refers to HTML)
-var before_or_after = document.getElementById("choromapSelector").value;
+var before_or_after = document.getElementById("dropdown").value;
 
 //Will select for the corect map info
 //so if the before prep option is choosen we want to show the before choro
 if (before_or_after == "Before PrEP") {
-  var mappy = "Before";
-  var time = "2008-2012";
+  var time = "Before Prep";
 }
 else if (before_or_after == "After PrEP") {
-  var mappy = "After";
-  var time = "2013-2018";
+  var time = "After Prep";
 }
 else {
-  var mappy = "Before";
-  var time = "2008-2012"
+  var time = "Before Prep";
 }
 
 //Change the choropleth's when new selection is made
-d3.select("#dropdown").on("change", updateChoro);
+d3.select("#dropdown").onchange="updateChoro()";
