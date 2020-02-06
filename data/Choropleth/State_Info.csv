@@ -1,0 +1,53 @@
+State Name,FIPS,St,Area Type,Abbrv
+United States of America,US000,US,Nation,US
+Alabama,01000,01,State,AL
+Alaska,02000,02,State,AK
+Arizona,04000,04,State,AZ
+Arkansas,05000,05,State,AR
+California,06000,06,State,CA
+Colorado,08000,08,State,CO
+Connecticut,09000,09,State,CT
+Delaware,10000,10,State,DE
+District of Columbia,11000,11,State,DC
+Florida,12000,12,State,FL
+Georgia,13000,13,State,GA
+Hawaii,15000,15,State,HI
+Idaho,16000,16,State,ID
+Illinois,17000,17,State,IL
+Indiana,18000,18,State,IN
+Iowa,19000,19,State,IA
+Kansas,20000,20,State,KS
+Kentucky,21000,21,State,KY
+Louisiana,22000,22,State,LA
+Maine,23000,23,State,ME
+Maryland,24000,24,State,MD
+Massachusetts,25000,25,State,MA
+Michigan,26000,26,State,MI
+Minnesota,27000,27,State,MN
+Mississippi,28000,28,State,MS
+Missouri,29000,29,State,MO
+Montana,30000,30,State,MT
+Nebraska,31000,31,State,NE
+Nevada,32000,32,State,NV
+New Hampshire,33000,33,State,NH
+New Jersey,34000,34,State,NJ
+New Mexico,35000,35,State,NM
+New York,36000,36,State,NY
+North Carolina,37000,37,State,NC
+North Dakota,38000,38,State,ND
+Ohio,39000,39,State,OH
+Oklahoma,40000,40,State,OK
+Oregon,41000,41,State,OR
+Pennsylvania,42000,42,State,PA
+Rhode Island,44000,44,State,RI
+South Carolina,45000,45,State,SC
+South Dakota,46000,46,State,SD
+Tennessee,47000,47,State,TN
+Texas,48000,48,State,TX
+Utah,49000,49,State,UT
+Vermont,50000,50,State,VT
+Virginia,51000,51,State,VA
+Washington,53000,53,State,WA
+West Virginia,54000,54,State,WV
+Wisconsin,55000,55,State,WI
+Wyoming,56000,56,State,WY
